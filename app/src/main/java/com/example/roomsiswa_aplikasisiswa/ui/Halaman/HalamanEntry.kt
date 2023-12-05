@@ -70,6 +70,7 @@ fun EntrySiswaScreen(
         )
     }
 }
+
 @Composable
 fun EntrySiswaBody(
     uiStateSiswa: UIStateSiswa,
