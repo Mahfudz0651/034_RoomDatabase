@@ -1,6 +1,5 @@
 package com.example.roomsiswa_aplikasisiswa.model
 
-import android.app.Application
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
@@ -17,6 +16,17 @@ object PenyediaViewModel {
         }
         initializer {
             EntryViewModel(aplikasiSiswa().container.repositoriSiswa)
+        }
+        initializer {
+            DetailsViewModel(
+                createSavedStateHandle(),
+                aplikasiSiswa().container.repositoriSiswa,)
+        }
+        initializer {
+            EditViewModel(
+                createSavedStateHandle(),
+                aplikasiSiswa().container.repositoriSiswa,
+            )
         }
     }
 }
