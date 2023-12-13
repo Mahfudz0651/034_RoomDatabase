@@ -1,5 +1,6 @@
 package com.example.roomsiswa_aplikasisiswa.model
 
+import EditViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
@@ -20,16 +21,17 @@ object PenyediaViewModel {
         initializer {
             DetailsViewModel(
                 createSavedStateHandle(),
-                aplikasiSiswa().container.repositoriSiswa,)
+                aplikasiSiswa().container.repositoriSiswa,
+            )
         }
+
         initializer {
             EditViewModel(
                 createSavedStateHandle(),
                 aplikasiSiswa().container.repositoriSiswa,
             )
-        }
     }
 }
 
 fun CreationExtras.aplikasiSiswa():AplikasiSiswa =
-    (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as AplikasiSiswa)
+    (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as AplikasiSiswa)}
